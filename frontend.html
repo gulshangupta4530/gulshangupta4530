@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gupta Gaming - Your Ultimate Gaming Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🎮</span>
+                <span class="logo-text">Gupta Gaming</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#games" class="nav-link">Games</a></li>
+                <li><a href="#leaderboard" class="nav-link">Leaderboard</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-login" onclick="openLoginModal()">Login</button>
+                <button class="btn-signup" onclick="openSignupModal()">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="glitch" data-text="LEVEL UP">LEVEL UP</span>
+                    <span class="subtitle">Your Gaming Experience</span>
+                </h1>
+                <p class="hero-description">Join thousands of gamers worldwide. Compete, connect, and conquer in the ultimate gaming arena.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToGames()">Explore Games</button>
+                    <button class="btn-secondary">Watch Trailer</button>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="activePlayersCount">4530264</div>
+                    <div class="stat-label">Active Players</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="gamesCount">264530</div>
+                    <div class="stat-label">Games Available</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="tournamentsCount">30452</div>
+                    <div class="stat-label">Tournaments</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-animation"></div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="games-section">
+        <div class="section-header">
+            <h2 class="section-title">Featured Games</h2>
+            <div class="category-filter">
+                <button class="filter-btn" data-category="all">All</button>
+                <button class="filter-btn" data-category="action">Action</button>
+                <button class="filter-btn" data-category="strategy">Strategy</button>
+                <button class="filter-btn" data-category="rpg">RPG</button>
+            </div>
+        </div>
+        <div class="games-grid" id="gamesGrid"></div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="leaderboard-section">
+        <div class="section-header">
+            <h2 class="section-title">Top Players</h2>
+        </div>
+        <div class="leaderboard-container">
+            <table class="leaderboard-table" id="leaderboardTable">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>Score</th>
+                        <th>Wins</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community-section">
+        <div class="section-header">
+            <h2 class="section-title">Join Our Community</h2>
+        </div>
+        <div class="community-grid">
+            <div class="community-card">
+                <div class="card-icon">💬</div>
+                <h3>Discord Server</h3>
+                <p>Connect with 50K+ gamers</p>
+                <button class="btn-join">Join Now</button>
+            </div>
+            <div class="community-card">
+                <div class="card-icon">🎮</div>
+                <h3>Tournaments</h3>
+                <p>Compete for prizes</p>
+                <button class="btn-join">Participate</button>
+            </div>
+            <div class="community-card">
+                <div class="card-icon">📰</div>
+                <h3>News & Updates</h3>
+                <p>Stay informed</p>
+                <button class="btn-join">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login to Gupta Gaming</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <h2>Create Account</h2>
+            <form id="signupForm">
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
